@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1D4ED8"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="12" fill="url(#bg)"/>
+
+  <!-- Circuit-style nodes (top-left) -->
+  <circle cx="14" cy="14" r="2" fill="#fff"/>
+  <line x1="14" y1="18" x2="14" y2="30" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="14" y1="18" x2="26" y2="18" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="26" cy="18" r="2" fill="#fff"/>
+  <circle cx="14" cy="30" r="2" fill="#fff"/>
+
+  <!-- Circuit-style nodes (bottom-right) -->
+  <circle cx="50" cy="50" r="2" fill="#fff"/>
+  <line x1="50" y1="46" x2="50" y2="34" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="50" y1="46" x2="38" y2="46" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="38" cy="46" r="2" fill="#fff"/>
+  <circle cx="50" cy="34" r="2" fill="#fff"/>
+
+  <!-- Central "T" letter -->
+  <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#FFFFFF">T</text>
+</svg> 
