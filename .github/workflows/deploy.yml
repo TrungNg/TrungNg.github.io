@@ -1,38 +1,33 @@
-   name: Build and deploy to GitHub Pages
+name: Build and deploy to GitHub Pages
+on:
+  push:
+    branches: [main]
 
-   on:
-     push:
-       branches: [main]
+permissions:
+  contents: read       # to fetch code
+  pages: write         # to deploy
+  id-token: write
 
-   permissions:
-     contents: read
-     pages: write
-     id-token: write
-
-   jobs:
-     build:
-       runs-on: ubuntu-latest
-       steps:
-         - uses: actions/checkout@v4
-
-         - uses: actions/setup-node@v4
-           with:
-             node-version: 20
-             cache: pnpm        # or npm / yarn
-
-         - run: pnpm install
-         - run: pnpm run build
-
-         - uses: actions/upload-pages-artifact@v3
-           with:
-             path: ./dist       # where Vite outputs
-
-     deploy:
-       needs: build
-       runs-on: ubuntu-latest
-       environment:
-         name: github-pages
-         url: ${{ steps.deployment.outputs.page_url }}
-       steps:
-         - id: deployment
-           uses: actions/deploy-pages@v4
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./dist        # built files
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v3
