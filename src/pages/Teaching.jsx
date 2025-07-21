@@ -4,9 +4,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge.jsx'
 import { Separator } from '@/components/ui/separator.jsx'
 import { Users, GraduationCap } from 'lucide-react'
-import { guestLectures } from '@/data.js'
+import { guestLectures, experiences } from '@/data.js'
 
 export default function Teaching() {
+  const uoaExperience = experiences.find(exp => exp.organization.includes('University of Auckland'));
+
   return (
     <section id="teaching" className="pt-32 pb-16 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -63,15 +65,15 @@ export default function Teaching() {
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
                     <span className="text-slate-600">PhD Students</span>
-                    <Badge variant="outline">2 Students (Gaël Gendron, Minjung Kim)</Badge>
+                    <Badge variant="outline">{uoaExperience.supervision.phd} Students (Gaël Gendron, Minjung Kim)</Badge>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-slate-600">MSc Students</span>
-                    <Badge variant="outline">3 Students</Badge>
+                    <Badge variant="outline">{uoaExperience.supervision.msc} Students</Badge>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-slate-600">Undergraduate Students</span>
-                    <Badge variant="outline">4 Students</Badge>
+                    <Badge variant="outline">{uoaExperience.supervision.undergrad} Students</Badge>
                   </div>
                 </div>
               </CardContent>
