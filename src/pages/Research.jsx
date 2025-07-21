@@ -45,7 +45,14 @@ export default function Research() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-slate-600">{exp.description}</p>
+                  <div className="pl-4">
+                    <p className="text-slate-600 mb-2">{exp.description}</p>
+                    {exp.supervision && (
+                      <p className="text-sm text-slate-500">
+                        Supervised {exp.supervision.phd} PhD, {exp.supervision.msc} MSc, and {exp.supervision.undergrad} undergraduate students.
+                      </p>
+                    )}
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>

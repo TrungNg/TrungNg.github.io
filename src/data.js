@@ -61,7 +61,12 @@ export const experiences = [
     organization: "University of Auckland",
     location: "Auckland, NZ",
     period: "02/2022 - 09/2024",
-    description: "Co-investigator on Marsden-funded GWAS project. Published 4 peer-reviewed papers. Supervised 2 PhD, 5 MSc, and 4 undergraduate students."
+    description: "Co-investigator on Marsden-funded GWAS project. Published 4 peer-reviewed papers.",
+    supervision: {
+      phd: 2,
+      msc: 5,
+      undergrad: 4,
+    }
   },
   {
     title: "Scientist (HRC-funded Research Position)",
