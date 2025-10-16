@@ -42,11 +42,11 @@ export default function About() {
               </Badge>
               <Badge variant="secondary" className="px-3 py-1">
                 <Award className="w-4 h-4 mr-2" />
-                2+ Years Postdoc
+                3+ Years Postdoc
               </Badge>
               <Badge variant="secondary" className="px-3 py-1">
                 <FileText className="w-4 h-4 mr-2" />
-                7 Publications
+                10+ Publications
               </Badge>
             </div>
 
